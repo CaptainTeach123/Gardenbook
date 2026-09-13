@@ -227,6 +227,41 @@
     .index-card:hover{ transform:none; }
   }
 
+  /* ---------- back to top ---------- */
+  #back-to-top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:5;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    background:var(--paper);
+    color:var(--leaf);
+    font-size:1.15rem;
+    line-height:1;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(37,43,35,.22);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:translateY(8px);
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  #back-to-top.show{
+    opacity:1;
+    transform:none;
+    pointer-events:auto;
+  }
+  #back-to-top:hover{ color:var(--leaf-dark); border-color:var(--leaf); }
+  #back-to-top:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){
+    #back-to-top{ transition:none; transform:none; }
+  }
+
   /* ---------- printable sheets ---------- */
   /* Sheets are paper: they stay light in both themes, like the printed page they become. */
   .sheet{
@@ -564,7 +599,7 @@
   @media print{
     body{ background:#fff; padding:0; }
     header.site, .toolbar, .index-grid, .empty-note,
-    .btn, .sheet-actions, .photo-hint, dialog{ display:none !important; }
+    .btn, .sheet-actions, .photo-hint, dialog, #back-to-top{ display:none !important; }
     .page[hidden]{ display:block !important; }
     .sheet{
       box-shadow:none;
@@ -606,6 +641,8 @@
     <div id="profiles"></div>
   </section>
 </main>
+
+<button id="back-to-top" aria-label="Back to top of the plant index" title="Back to top">↑</button>
 
 <!-- ============ PLANT EDITOR ============ -->
 <dialog id="editor" aria-labelledby="editor-title">
@@ -916,6 +953,21 @@
     render();
   });
   document.getElementById("print-btn").addEventListener("click", function(){ window.print(); });
+
+  /* ---------- back to top ---------- */
+  var topBtn = document.getElementById("back-to-top");
+  var topBtnShown = false;
+  window.addEventListener("scroll", function(){
+    var show = window.scrollY > 500;
+    if (show !== topBtnShown){
+      topBtnShown = show;
+      topBtn.classList.toggle("show", show);
+    }
+  }, { passive: true });
+  topBtn.addEventListener("click", function(){
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
 
   /* ---------- editor ---------- */
   var dlg = document.getElementById("editor");
