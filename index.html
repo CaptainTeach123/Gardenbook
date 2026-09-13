@@ -711,6 +711,14 @@
     if (p.photo) return p.photo;
     return null;
   }
+  /* Small square version for index circles; falls back to the full photo. */
+  function thumbSrc(p){
+    var src = photoSrc(p);
+    if (src && /^images\/[^\/]+\.jpg$/i.test(src)){
+      return "images/thumbs/" + src.slice("images/".length);
+    }
+    return src;
+  }
   function sortName(p){ return (p.name || "￿").toLowerCase(); }
   function visiblePlants(){
     var q = state.search.trim().toLowerCase();
@@ -751,7 +759,7 @@
             '<div class="box-title">Photo</div>' +
             '<div class="photo-well">' +
               (src
-                ? '<img src="' + esc(src) + '" alt="' + esc(p.name || "Plant photo") + '" loading="lazy" onerror="this.style.display=\'none\'">'
+                ? '<img src="' + esc(src) + '" alt="' + esc(p.name || "Plant photo") + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
                 : '<span class="photo-hint">Photo to come</span>') +
             '</div>' +
           '</div>' +
@@ -859,7 +867,7 @@
       var src = photoSrc(p);
       return '<button type="button" class="index-card" data-goto="' + esc(p._id) + '">' +
         '<span class="index-thumb">' + (src
-          ? '<img src="' + esc(src) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+          ? '<img src="' + esc(thumbSrc(p)) + '" data-full="' + esc(src) + '" alt="" loading="lazy" decoding="async" onerror="if(this.dataset.full&&this.getAttribute(\'src\')!==this.dataset.full){this.src=this.dataset.full}else{this.style.display=\'none\'}">'
           : '<span aria-hidden="true">🌱</span>') + '</span>' +
         '<span><span class="index-name">' + esc(p.name || "Unnamed") + '</span>' +
         (p.scientificName ? '<br><span class="index-sci">' + esc(p.scientificName) + '</span>' : '') +
