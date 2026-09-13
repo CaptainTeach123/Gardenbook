@@ -65,6 +65,8 @@
     justify-content:space-between;
     gap:12px 24px;
     padding-block:40px 20px;
+    border-bottom:1px solid var(--hairline);
+    margin-bottom:28px;
   }
   .site-title{
     margin:0;
@@ -97,29 +99,6 @@
   .btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
   .btn.small{ padding:5px 14px; font-size:.7rem; }
   .btn.danger{ border-color:var(--clay); color:var(--clay); }
-
-  nav.tabs{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    border-bottom:1px solid var(--hairline);
-    margin-bottom:28px;
-  }
-  .tab{
-    font-family:var(--font-body);
-    font-weight:700;
-    font-size:.78rem;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    background:none;
-    border:none;
-    border-bottom:3px solid transparent;
-    color:var(--ink-soft);
-    padding:10px 14px 12px;
-    cursor:pointer;
-  }
-  .tab[aria-selected="true"]{ color:var(--leaf); border-bottom-color:var(--leaf); }
-  .tab:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
 
   /* ---------- toolbar + index ---------- */
   .toolbar{
@@ -412,58 +391,6 @@
   }
   .sheet-foot .leafmark{ color:var(--leaf); letter-spacing:0; }
 
-  /* ---------- watering schedule ---------- */
-  table.week{ width:100%; border-collapse:collapse; margin-top:16px; }
-  table.week th, table.week td{
-    border:1.5px solid var(--line);
-    padding:7px 6px;
-    font-size:.8rem;
-    text-align:center;
-  }
-  table.week th{ font-weight:700; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; }
-  table.week th:first-child{ width:26%; text-align:left; padding-left:10px; }
-  table.week td:first-child{ text-align:left; padding-left:10px; }
-  table.week td{ height:32px; }
-  .sheet-note{ margin:10px 0 0; font-size:.8rem; color:#5C6A5F; }
-
-  /* ---------- weekly planner ---------- */
-  .week-of{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    margin:14px 0 18px;
-    font-size:.78rem;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-  }
-  .week-of .fill-line{ width:220px; }
-  .planner-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .day-box{ border:1.5px solid var(--line); }
-  .day-box h4{
-    margin:0;
-    padding:6px 10px;
-    font-size:.7rem;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    border-bottom:1.5px solid var(--line);
-  }
-  .day-box h4 .script-day{
-    font-family:var(--font-script);
-    font-size:1.15rem;
-    font-weight:500;
-    letter-spacing:0;
-    text-transform:none;
-    color:var(--leaf);
-    margin-right:6px;
-  }
-  .day-lines{ padding:8px 10px 10px; }
-  .day-lines .fill-line{ min-height:1.7em; }
-  .tasks-box{ border:1.5px solid var(--leaf); }
-  .tasks-box h4{ border-bottom-color:var(--leaf); color:var(--leaf); }
-  .tasks-box .day-lines{ display:flex; flex-direction:column; gap:2px; }
-  .tasks-box .cb{ padding:4px 0; }
-
   /* ---------- editor dialog ---------- */
   dialog#editor{
     border:none;
@@ -545,7 +472,7 @@
   @media (max-width: 700px){
     .sheet{ padding:26px 20px; }
     .sheet-actions{ position:static; justify-content:flex-end; margin-bottom:10px; }
-    .top-grid, .mid-grid, .bottom-grid, .planner-grid, .ed-grid{ grid-template-columns:1fr; }
+    .top-grid, .mid-grid, .bottom-grid, .ed-grid{ grid-template-columns:1fr; }
     .pruning-grid{ grid-template-columns:1fr; }
     .pruning-col + .pruning-col{ border-left:none; border-top:1.5px solid var(--clay); }
     .care-box .care-cols{ grid-template-columns:1fr; }
@@ -560,7 +487,7 @@
   /* ---------- print ---------- */
   @media print{
     body{ background:#fff; padding:0; }
-    header.site, nav.tabs, .toolbar, .index-grid, .empty-note,
+    header.site, .toolbar, .index-grid, .empty-note,
     .btn, .sheet-actions, .photo-hint, dialog{ display:none !important; }
     .page[hidden]{ display:block !important; }
     .sheet{
@@ -579,21 +506,15 @@
   <header class="site">
     <div>
       <h1 class="site-title">The Garden Book <span class="leafmark">❦</span></h1>
-      <p class="site-sub">Our plant journal — a profile sheet for every plant in the garden, with a watering schedule and weekly planner to keep it all growing.</p>
+      <p class="site-sub">A plant Journal for my lovely wife.</p>
     </div>
     <button class="btn primary" id="print-btn">Print sheets</button>
   </header>
-
-  <nav class="tabs" role="tablist" aria-label="Garden book pages">
-    <button class="tab" role="tab" id="tab-profiles" aria-selected="true" aria-controls="page-profiles">Plant Profiles</button>
-    <button class="tab" role="tab" id="tab-watering" aria-selected="false" aria-controls="page-watering">Watering Schedule</button>
-    <button class="tab" role="tab" id="tab-planner" aria-selected="false" aria-controls="page-planner">Weekly Planner</button>
-  </nav>
 </div>
 
 <main>
   <!-- ============ PLANT PROFILES ============ -->
-  <section class="page" id="page-profiles" role="tabpanel" aria-labelledby="tab-profiles">
+  <section class="page" id="page-profiles">
     <div class="chrome">
       <div class="toolbar">
         <div class="search-wrap">
@@ -607,34 +528,6 @@
     <div class="index-grid" id="index"></div>
     <p class="empty-note" id="empty-note" hidden></p>
     <div id="profiles"></div>
-  </section>
-
-  <!-- ============ WATERING SCHEDULE ============ -->
-  <section class="page" id="page-watering" role="tabpanel" aria-labelledby="tab-watering" hidden>
-    <article class="sheet">
-      <h2 class="script-h">Watering Schedule</h2>
-      <table class="week" aria-label="Weekly watering checklist">
-        <thead>
-          <tr>
-            <th>Plant</th>
-            <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
-          </tr>
-        </thead>
-        <tbody id="watering-rows"></tbody>
-      </table>
-      <p class="sheet-note">Tick the box after watering. Morning watering loses less to evaporation — and check the top inch of soil first: if it’s still damp, skip the day.</p>
-      <footer class="sheet-foot"><span>Watering Schedule</span><span class="leafmark">❦</span><span>The Garden Book</span></footer>
-    </article>
-  </section>
-
-  <!-- ============ WEEKLY PLANNER ============ -->
-  <section class="page" id="page-planner" role="tabpanel" aria-labelledby="tab-planner" hidden>
-    <article class="sheet">
-      <h2 class="script-h">Weekly Planner</h2>
-      <div class="week-of">Week of <span class="fill-line"></span></div>
-      <div class="planner-grid" id="planner-days"></div>
-      <footer class="sheet-foot"><span>Weekly Planner</span><span class="leafmark">❦</span><span>The Garden Book</span></footer>
-    </article>
   </section>
 </main>
 
@@ -920,18 +813,6 @@
       elEmpty.textContent = "No plants match your search.";
       elProfiles.innerHTML = list.map(function(p){ return profileSheet(p, canEdit); }).join("");
     }
-
-    renderWatering(list);
-  }
-
-  function renderWatering(list){
-    var rows = Math.max(12, list.length + 2);
-    var html = "";
-    for (var r = 0; r < rows; r++){
-      var name = list[r] ? (list[r].name || "") : "";
-      html += '<tr><td>' + esc(name) + '</td>' + Array(7).fill('<td></td>').join("") + '</tr>';
-    }
-    document.getElementById("watering-rows").innerHTML = html;
   }
 
   /* index card click + edit buttons (delegated) */
@@ -951,38 +832,6 @@
     render();
   });
   document.getElementById("print-btn").addEventListener("click", function(){ window.print(); });
-
-  /* ---------- weekly planner (static) ---------- */
-  var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-  var dayBoxes = days.map(function(d){
-    return '<div class="day-box">' +
-      '<h4><span class="script-day">' + d.slice(0,3) + '</span>' + d + '</h4>' +
-      '<div class="day-lines"><div class="fill-line"></div><div class="fill-line"></div><div class="fill-line"></div></div>' +
-    '</div>';
-  });
-  dayBoxes.push(
-    '<div class="day-box tasks-box">' +
-      '<h4>This Week in the Garden</h4>' +
-      '<div class="day-lines">' +
-        ['Water &amp; feed','Weed beds','Deadhead / prune','Sow or pot up','Check for pests',''].map(function(t){
-          return '<span class="cb"><span class="sq" aria-hidden="true"></span>' + (t || '<span class="fill-line" style="flex:1;"></span>') + '</span>';
-        }).join("") +
-      '</div>' +
-    '</div>'
-  );
-  document.getElementById("planner-days").innerHTML = dayBoxes.join("");
-
-  /* ---------- tabs ---------- */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  tabs.forEach(function(tab){
-    tab.addEventListener("click", function(){
-      tabs.forEach(function(t){
-        var selected = t === tab;
-        t.setAttribute("aria-selected", selected ? "true" : "false");
-        document.getElementById(t.getAttribute("aria-controls")).hidden = !selected;
-      });
-    });
-  });
 
   /* ---------- editor ---------- */
   var dlg = document.getElementById("editor");

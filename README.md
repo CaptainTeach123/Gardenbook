@@ -2,11 +2,7 @@
 
 A printable plant journal website — inspired by classic "Plant Profile" printables, with an added **Pruning** section.
 
-## Pages
-
-- **Plant Profiles** — one sheet per plant: photo, general information (name, scientific name, origin, propagation, type, ideal temp, soil type, fertilizer), sunlight / water / toxicity checkboxes, plant uses, **pruning** (best season, method, frequency, tools, last pruned, notes), plant log, and pests/diseases & treatment.
-- **Watering Schedule** — weekly tick-box watering chart.
-- **Weekly Planner** — day-by-day garden planner with a task checklist.
+Each plant gets a profile sheet: photo, general information (name, scientific name, origin, propagation, type, ideal temp, soil type, fertilizer), sunlight / water / toxicity checkboxes, plant uses, **pruning** (best season, method, frequency, tools, last pruned, notes), plant log, and pests/diseases & treatment. A searchable index sits above the sheets.
 
 Every sheet is print-ready: use the **Print sheets** button (each sheet lands on its own page).
 
