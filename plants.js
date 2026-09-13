@@ -788,3 +788,28 @@ PLANTS.push({
   "photo": "images/panicle-hydrangea.jpg"
 });
 
+PLANTS.push({
+  "name": "Pink Weigela",
+  "scientificName": "Weigela florida — green-leaved rebloomer ('Sonic Bloom' type)",
+  "origin": "East Asia — China, Korea, Japan",
+  "propagation": "Softwood cuttings in early summer",
+  "type": "Arching deciduous shrub; pink trumpet flowers spring into fall",
+  "idealTemp": "Hardy zones 4–8",
+  "soilType": "Average, well-drained; adaptable",
+  "fertilizer": "Light balanced feed in early spring",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": ["Human Safe", "Pet Safe"],
+  "uses": ["Decorative"],
+  "pruning": {
+    "seasons": ["Spring", "Summer"],
+    "methods": ["Thin", "Cut Back"],
+    "frequency": "Once a year, right after the big spring bloom",
+    "tools": "Bypass pruners; loppers for old stems",
+    "lastPruned": "",
+    "notes": "The main flush comes on last year's wood, so do the real pruning right after spring bloom — but a rebloomer like this also flowers on new growth, which is why it's showing pink in September. Thin a couple of the oldest stems at the base each year and shorten wayward shoots; avoid fall pruning."
+  },
+  "pests": "Generally trouble-free; occasional aphids — a strong hose spray handles them. Hummingbirds love the trumpets.",
+  "log": [{ "date": "2026-09-13", "entry": "Added to the garden book — reblooming pink among the black-eyed susans" }],
+  "photo": "images/pink-weigela.jpg"
+});

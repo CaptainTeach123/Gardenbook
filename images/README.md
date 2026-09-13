@@ -22,3 +22,4 @@ appears on its profile sheet as soon as the file exists):
 - `hardy-hibiscus.jpg` — Hardy Hibiscus
 - `rose-of-sharon.jpg` — Rose of Sharon
 - `panicle-hydrangea.jpg` — Panicle Hydrangea
+- `pink-weigela.jpg` — Pink Weigela (green-leaved rebloomer)
