@@ -42,7 +42,7 @@ const PLANTS = [];
 PLANTS.push({
   name: "Butterfly Bush",
   scientificName: "Buddleja davidii",
-  // photo: "images/butterfly-bush.jpg",  // add the photo file to images/ to show it here
+  photo: "images/butterfly-bush.jpg",  // shows as soon as this file lands in images/
   origin: "Central China; naturalized widely",
   propagation: "Softwood cuttings in summer; self-seeds readily",
   type: "Deciduous flowering shrub (compact/dwarf form)",

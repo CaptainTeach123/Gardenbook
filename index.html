@@ -794,7 +794,7 @@
             '<div class="box-title">Photo</div>' +
             '<div class="photo-well">' +
               (src
-                ? '<img src="' + esc(src) + '" alt="' + esc(p.name || "Plant photo") + '" loading="lazy">'
+                ? '<img src="' + esc(src) + '" alt="' + esc(p.name || "Plant photo") + '" loading="lazy" onerror="this.hidden=true">'
                 : '<span class="photo-hint">Photo to come</span>') +
             '</div>' +
           '</div>' +
@@ -902,7 +902,7 @@
       var src = photoSrc(p);
       return '<button type="button" class="index-card" data-goto="' + esc(p._id) + '">' +
         '<span class="index-thumb">' + (src
-          ? '<img src="' + esc(src) + '" alt="" loading="lazy">'
+          ? '<img src="' + esc(src) + '" alt="" loading="lazy" onerror="this.hidden=true">'
           : '<span aria-hidden="true">🌱</span>') + '</span>' +
         '<span><span class="index-name">' + esc(p.name || "Unnamed") + '</span>' +
         (p.scientificName ? '<br><span class="index-sci">' + esc(p.scientificName) + '</span>' : '') +
