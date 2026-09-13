@@ -206,3 +206,585 @@ PLANTS.push({
     { date: "2026-09-13", entry: "Added to the garden book — wine-dark foliage by the brick corner" }
   ]
 });
+
+PLANTS.push({
+  "name": "Variegated Dogwood",
+  "scientificName": "Cornus alba 'Elegantissima'",
+  "origin": "Siberia and northern China (species)",
+  "propagation": "Hardwood cuttings in winter; layering",
+  "type": "Deciduous shrub — white-edged leaves, red winter stems",
+  "idealTemp": "Cool-climate tough; hardy zones 3–7",
+  "soilType": "Adaptable; likes moisture, tolerates clay",
+  "fertilizer": "Light compost in spring",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Renewal-thin every late winter",
+    "tools": "Loppers; bypass pruners",
+    "lastPruned": "",
+    "notes": "The brightest red winter bark is on young wood — each late winter cut a third of the oldest, dullest stems right to the ground. Every few years the whole shrub can be coppiced to 8–12 in. to fully renew it; light shaping any time in summer."
+  },
+  "pests": "Tolerant overall — occasional scale, aphids, and leaf spot; canker can appear on stressed old stems (prune them out).",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — cream-edged leaves over red stems"
+    }
+  ],
+  "photo": "images/variegated-dogwood.jpg"
+});
+
+PLANTS.push({
+  "name": "Feather Reed Grass",
+  "scientificName": "Calamagrostis × acutiflora 'Karl Foerster'",
+  "origin": "Garden hybrid of European and Asian species",
+  "propagation": "Division in spring (sterile — it won't self-seed)",
+  "type": "Cool-season ornamental grass, strict upright clumps",
+  "idealTemp": "Hardy zones 4–9; grows in cool weather",
+  "soilType": "Adaptable, even heavy clay; likes some moisture",
+  "fertilizer": "None needed",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Cut Back",
+      "Shear"
+    ],
+    "frequency": "One hard cut-back a year, late winter",
+    "tools": "Hedge shears; tie the clump into a sheaf first",
+    "lastPruned": "",
+    "notes": "Leave the wheat-gold plumes standing all winter — they are the show. In late winter, before new green emerges, tie the clump like a sheaf and shear it down to 4–6 in. in one clean cut."
+  },
+  "pests": "Essentially pest- and disease-free; a little rust only in wet, airless corners.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — plumes going gold by the brick wall"
+    }
+  ],
+  "photo": "images/feather-reed-grass.jpg"
+});
+
+PLANTS.push({
+  "name": "Honeysuckle Vine",
+  "scientificName": "Lonicera — likely coral honeysuckle (L. sempervirens)",
+  "origin": "Eastern North America (coral honeysuckle)",
+  "propagation": "Softwood cuttings; layering where a stem touches soil",
+  "type": "Twining woody vine, trained on a trellis; red berries in fall",
+  "idealTemp": "Hardy zones 4–9",
+  "soilType": "Average, well-drained",
+  "fertilizer": "Light feed in spring; too much means leaves over flowers",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "methods": [
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Light shaping after the main bloom; renew in late winter",
+    "tools": "Bypass pruners",
+    "lastPruned": "",
+    "notes": "Blooms mostly on new growth — a light trim after the big flush keeps it tidy and encourages rebloom. Every few late winters, thin the oldest woody stems at the base to renew; untangle rather than shear so the trellis stays open."
+  },
+  "pests": "Aphids cluster on new tips (hose them off); powdery mildew when airflow is poor. The red berries are for the birds — mildly toxic to people and pets, so no snacking.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — berries ripening red on the trellis"
+    }
+  ],
+  "photo": "images/honeysuckle.jpg"
+});
+
+PLANTS.push({
+  "name": "Variegated Maiden Grass",
+  "scientificName": "Miscanthus sinensis 'Variegatus'",
+  "origin": "East Asia",
+  "propagation": "Division in spring",
+  "type": "Warm-season ornamental grass, arching cream-striped blades",
+  "idealTemp": "Hardy zones 5–9; hits stride in summer heat",
+  "soilType": "Average, well-drained",
+  "fertilizer": "None to light — rich soil makes it flop",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Cut Back"
+    ],
+    "frequency": "One cut-back a year in late winter",
+    "tools": "Hedge shears and gloves — the blades are sharp",
+    "lastPruned": "",
+    "notes": "Let the fountain of foliage stand through winter, then cut the whole clump to 4–6 in. in late winter before new shoots emerge. When the center hollows out after some years, lift and divide in spring."
+  },
+  "pests": "Trouble-free; flops open in shade or overly rich soil. Wear gloves — the blade edges cut.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — cream-striped fountain by the trellis"
+    }
+  ],
+  "photo": "images/variegated-miscanthus.jpg"
+});
+
+PLANTS.push({
+  "name": "Limelight Hydrangea",
+  "scientificName": "Hydrangea paniculata 'Limelight'",
+  "origin": "Species from China and Japan; Dutch-bred cultivar",
+  "propagation": "Softwood cuttings in early summer",
+  "type": "Deciduous flowering shrub — lime panicles aging to cream",
+  "idealTemp": "Hardy zones 3–8; one of the toughest hydrangeas",
+  "soilType": "Average, well-drained; far less fussy than mophead types",
+  "fertilizer": "Light balanced feed in spring; overfeeding flops the heads",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Cut Back",
+      "Deadhead"
+    ],
+    "frequency": "Once, in late winter or early spring",
+    "tools": "Bypass pruners; loppers for the framework",
+    "lastPruned": "",
+    "notes": "Blooms on new wood — cut back by about a third in late winter to a sturdy framework and you get fewer but bigger heads on stems strong enough to hold them. The dried heads can stand all winter; snip whenever you like."
+  },
+  "pests": "Few problems — occasional aphids or leaf spot. Keep pets from chewing any hydrangea; the leaves and buds are mildly toxic if eaten.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — lime heads glowing against the brick"
+    }
+  ],
+  "photo": "images/limelight-hydrangea.jpg"
+});
+
+PLANTS.push({
+  "name": "White Shrub Rose",
+  "scientificName": "Rosa — white cluster-flowered landscape rose",
+  "origin": "Garden hybrid",
+  "propagation": "Softwood or hardwood cuttings",
+  "type": "Repeat-blooming shrub rose, double white clusters",
+  "idealTemp": "Hardy zones 4–9",
+  "soilType": "Rich, well-drained; steady moisture",
+  "fertilizer": "Feed in spring and after each bloom flush",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "methods": [
+      "Deadhead",
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Main prune in early spring; deadhead all season",
+    "tools": "Bypass pruners; rose gauntlets",
+    "lastPruned": "",
+    "notes": "In early spring, as buds swell, cut back by about a third, remove dead and crossing canes, and open the center for airflow — always cutting to an outward-facing bud. Deadhead spent clusters through summer for repeat bloom, and stop by early fall so the wood hardens for winter."
+  },
+  "pests": "The usual rose watch: black spot and powdery mildew (morning sun, airflow, water at the base), aphids and Japanese beetles (hose off or hand-pick into soapy water).",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — smothered in white clusters"
+    }
+  ],
+  "photo": "images/white-rose.jpg"
+});
+
+PLANTS.push({
+  "name": "Ninebark",
+  "scientificName": "Physocarpus opulifolius — dark-leaved ('Diabolo' type)",
+  "origin": "North America",
+  "propagation": "Softwood cuttings",
+  "type": "Deciduous shrub, deep burgundy lobed foliage; peeling winter bark",
+  "idealTemp": "Hardy zones 3–7",
+  "soilType": "Adaptable, well-drained; drought tolerant once established",
+  "fertilizer": "Little to none",
+  "sunlight": "Sun",
+  "water": "Low",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "methods": [
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Thin right after its early-summer bloom",
+    "tools": "Loppers; bypass pruners",
+    "lastPruned": "",
+    "notes": "Blooms on old wood — prune just after the white button flowers finish. Take a few of the oldest stems to the ground each year to renew and show the peeling bark. If it outgrows its spot it shrugs off a full cut to the base in late winter (at the cost of that year's flowers)."
+  },
+  "pests": "Tough as nails; powdery mildew on crowded new growth is the one real issue — thin for airflow. Full sun keeps the burgundy darkest.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — near-black foliage in full sun"
+    }
+  ],
+  "photo": "images/ninebark.jpg"
+});
+
+PLANTS.push({
+  "name": "Orange Coneflower",
+  "scientificName": "Echinacea hybrid — 'Sombrero'-type orange",
+  "origin": "North American prairie species; modern garden hybrid",
+  "propagation": "Division in spring; hybrids don't come true from seed",
+  "type": "Herbaceous perennial",
+  "idealTemp": "Hardy zones 4–9",
+  "soilType": "Average, well-drained",
+  "fertilizer": "A little compost in spring at most",
+  "sunlight": "Sun",
+  "water": "Low",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Medicinal",
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Summer",
+      "Autumn"
+    ],
+    "methods": [
+      "Deadhead",
+      "Cut Back"
+    ],
+    "frequency": "Deadhead through summer; cut down in late winter",
+    "tools": "Snips",
+    "lastPruned": "",
+    "notes": "Deadhead spent cones back to a lower bud and the flowers keep coming. Leave the last seed heads standing through winter — goldfinches work them for months — then cut the stems to the basal rosette in late winter."
+  },
+  "pests": "Few troubles; rots in winter-wet soil. Aster yellows (green, deformed blooms) is the one to act on — remove the plant.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — young plant, first flame-orange cones"
+    }
+  ],
+  "photo": "images/orange-coneflower.jpg"
+});
+
+PLANTS.push({
+  "name": "Japanese Spirea",
+  "scientificName": "Spiraea japonica — gold/red-tipped ('Double Play' type)",
+  "origin": "Japan, China, Korea",
+  "propagation": "Softwood cuttings",
+  "type": "Compact deciduous shrub; new growth flames gold to red, pink corymbs",
+  "idealTemp": "Hardy zones 4–8",
+  "soilType": "Average, well-drained; unfussy",
+  "fertilizer": "Light feed in spring",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "methods": [
+      "Shear",
+      "Deadhead",
+      "Cut Back"
+    ],
+    "frequency": "Shear after the first bloom; hard prune late winter as needed",
+    "tools": "Hedge shears",
+    "lastPruned": "",
+    "notes": "Blooms on new wood — shear off the spent flower heads after the first flush and it usually reblooms with a fresh blaze of colored new growth. Every late winter it can be cut back hard, even to 6 in., to stay dense and compact."
+  },
+  "pests": "Sturdy; occasional aphids or leaf spot. Can self-seed — shearing the spent blooms prevents it.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — pink heads over flame-tipped leaves"
+    }
+  ],
+  "photo": "images/japanese-spirea.jpg"
+});
+
+PLANTS.push({
+  "name": "Cream Shrub Rose",
+  "scientificName": "Rosa — cream-to-apricot shrub rose",
+  "origin": "Garden hybrid",
+  "propagation": "Softwood or hardwood cuttings",
+  "type": "Repeat-blooming shrub rose, full cream blooms with a gold heart",
+  "idealTemp": "Hardy zones 4–9",
+  "soilType": "Rich, well-drained; steady moisture",
+  "fertilizer": "Feed in spring and after each bloom flush",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "methods": [
+      "Deadhead",
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Main prune in early spring; deadhead all season",
+    "tools": "Bypass pruners; rose gauntlets",
+    "lastPruned": "",
+    "notes": "Same rhythm as its white companion: early-spring cut-back by a third to outward-facing buds with the center opened for air, then steady summer deadheading for wave after wave of bloom. Stop deadheading by early fall to let it harden off."
+  },
+  "pests": "Black spot and mildew are kept off with airflow and base-watering; hose off aphids, hand-pick Japanese beetles.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — cream blooms with a soft gold center"
+    }
+  ],
+  "photo": "images/cream-rose.jpg"
+});
+
+PLANTS.push({
+  "name": "Yarrow",
+  "scientificName": "Achillea millefolium — terracotta/pastel cultivar",
+  "origin": "Europe, Asia, and North America",
+  "propagation": "Division every few years; can self-seed",
+  "type": "Herbaceous perennial with ferny, aromatic foliage",
+  "idealTemp": "Hardy zones 3–9",
+  "soilType": "Lean and sharply drained; thrives on neglect",
+  "fertilizer": "None — rich soil makes it flop",
+  "sunlight": "Sun",
+  "water": "Low",
+  "toxicity": [
+    "Human Safe"
+  ],
+  "uses": [
+    "Medicinal",
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Summer"
+    ],
+    "methods": [
+      "Deadhead",
+      "Cut Back"
+    ],
+    "frequency": "Deadhead each flush; cut back by half if it sprawls",
+    "tools": "Snips",
+    "lastPruned": "",
+    "notes": "Deadhead faded corymbs to a side bud for repeated waves of bloom in shifting sunset shades. If the clump sprawls in high summer, cut it back by half — it refreshes quickly. Cut to the basal foliage in late fall or early spring."
+  },
+  "pests": "Nearly indestructible in lean, dry soil; rots in rich wet ground. Mildly toxic to dogs and cats, so discourage grazing.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — peach and amber heads over ferny leaves"
+    }
+  ],
+  "photo": "images/yarrow.jpg"
+});
+
+PLANTS.push({
+  "name": "Hardy Hibiscus",
+  "scientificName": "Hibiscus moscheutos hybrid — dark-leaved rose mallow",
+  "origin": "North American wetland species; modern hybrid",
+  "propagation": "Division in spring; softwood cuttings",
+  "type": "Die-back herbaceous perennial with dinner-plate blooms",
+  "idealTemp": "Hardy zones 4–9; loves heat",
+  "soilType": "Rich and moist; one of the few that tolerates wet feet",
+  "fertilizer": "Feed in spring and again midsummer",
+  "sunlight": "Sun",
+  "water": "High",
+  "toxicity": [
+    "Human Safe",
+    "Pet Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Cut Back",
+      "Pinch",
+      "Deadhead"
+    ],
+    "frequency": "Cut dead stalks in late winter; pinch once in early summer",
+    "tools": "Loppers for the woody stalks",
+    "lastPruned": "",
+    "notes": "It is the last plant to wake in spring — never declare it dead. Cut last year's stalks to about 6 in. in late winter and mark the spot; pinch the new shoots once in early summer for a bushier plant with more dinner-plate blooms. Deadhead to keep it fresh."
+  },
+  "pests": "Japanese beetles and hibiscus sawfly larvae chew the leaves (hand-pick or use insecticidal soap); keep it well watered — drought stress invites spider mites.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — blush dinner-plate blooms over dark leaves"
+    }
+  ],
+  "photo": "images/hardy-hibiscus.jpg"
+});
+
+PLANTS.push({
+  "name": "Rose of Sharon",
+  "scientificName": "Hibiscus syriacus — double pale pink ('Blushing Bride' type)",
+  "origin": "China and India",
+  "propagation": "Softwood cuttings; species self-seeds (doubles far less)",
+  "type": "Upright deciduous shrub, late-summer hibiscus blooms",
+  "idealTemp": "Hardy zones 5–9; loves heat",
+  "soilType": "Average, well-drained; very adaptable",
+  "fertilizer": "Light feed in spring",
+  "sunlight": "Sun",
+  "water": "Low",
+  "toxicity": [
+    "Human Safe"
+  ],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Thin",
+      "Cut Back"
+    ],
+    "frequency": "Once, in late winter or early spring",
+    "tools": "Bypass pruners; loppers",
+    "lastPruned": "",
+    "notes": "Blooms on new wood in late summer — prune in late winter: thin crowded interior stems and shorten last year's growth. Cutting harder gives fewer but larger flowers, and it tolerates renovation down to a framework."
+  },
+  "pests": "Aphids on new tips and Japanese beetles in midsummer. The ASPCA lists Rose of Sharon as mildly toxic to dogs and cats — discourage nibbling.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — pink doubles rising through the black-eyed susans"
+    }
+  ],
+  "photo": "images/rose-of-sharon.jpg"
+});
+
+PLANTS.push({
+  "name": "Panicle Hydrangea",
+  "scientificName": "Hydrangea paniculata — cream cone-flowered cultivar",
+  "origin": "China and Japan (species)",
+  "propagation": "Softwood cuttings in early summer",
+  "type": "Deciduous shrub — big conical cream heads aging to parchment",
+  "idealTemp": "Hardy zones 3–8",
+  "soilType": "Average, well-drained; adaptable",
+  "fertilizer": "Light balanced feed in spring only",
+  "sunlight": "Sun",
+  "water": "Medium",
+  "toxicity": [],
+  "uses": [
+    "Decorative"
+  ],
+  "pruning": {
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "methods": [
+      "Cut Back",
+      "Deadhead"
+    ],
+    "frequency": "Once, in late winter or early spring",
+    "tools": "Bypass pruners; loppers",
+    "lastPruned": "",
+    "notes": "Blooms on new wood — in late winter cut back by a third to a strong framework and thin spindly stems so the cones ride on sturdy wood. Spent heads dry beautifully; leave them for winter or cut for the vase."
+  },
+  "pests": "Few problems; heads may brown early in hot afternoon sun — deep watering helps. Mildly toxic if pets chew the foliage.",
+  "log": [
+    {
+      "date": "2026-09-13",
+      "entry": "Added to the garden book — cream cones fading to parchment"
+    }
+  ],
+  "photo": "images/panicle-hydrangea.jpg"
+});
+
