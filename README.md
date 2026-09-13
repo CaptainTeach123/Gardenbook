@@ -12,7 +12,12 @@ Every sheet is print-ready: use the **Print sheets** button (each sheet lands on
 
 ## Adding plants
 
-Plant names, photos, and details go in [`plants.js`](plants.js) — push one object per plant onto the `PLANTS` array (a documented example is in the file). Put photo files in an `images/` folder and reference them by path. With no plants added, the site shows the blank template.
+The site runs in two modes:
+
+- **Shared book (Claude artifact)** — when published as a Claude artifact with the `db` and `assets` capabilities, an **Add plant** button appears: plants are created and edited directly on the page (with photo upload) and stored in a shared database, live-synced for everyone with access.
+- **Static site (GitHub Pages)** — plants come from [`plants.js`](plants.js): push one object per plant onto the `PLANTS` array (a documented example is in the file). Put photo files in an `images/` folder and reference them by path. With no plants added, the site shows the blank printable template.
+
+Either way there's a searchable plant index, and every profile prints as its own sheet.
 
 ## Viewing online (GitHub Pages)
 

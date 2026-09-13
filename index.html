@@ -17,8 +17,8 @@
     --leaf-dark:#2F5238;
     --clay:#A96A48;
     --hairline:#C4CFC2;
+    --card:#F4F6F0;
     --paper:#FCFCF8;
-    --paper-line:#2A2F2B;
     --shadow:0 10px 30px rgba(40,50,43,.14), 0 2px 6px rgba(40,50,43,.10);
     --font-body:"Karla", "Segoe UI", Arial, sans-serif;
     --font-script:"Caveat", "Segoe Script", cursive;
@@ -30,6 +30,7 @@
       --ink:#E4E9E2;
       --ink-soft:#9FAC9F;
       --hairline:#3A453B;
+      --card:#262E27;
       --shadow:0 10px 30px rgba(0,0,0,.5), 0 2px 6px rgba(0,0,0,.4);
     }
   }
@@ -39,6 +40,7 @@
     --ink:#E4E9E2;
     --ink-soft:#9FAC9F;
     --hairline:#3A453B;
+    --card:#262E27;
     --shadow:0 10px 30px rgba(0,0,0,.5), 0 2px 6px rgba(0,0,0,.4);
   }
 
@@ -55,10 +57,7 @@
   }
 
   /* ---------- site chrome ---------- */
-  .chrome{
-    max-width:880px;
-    margin:0 auto;
-  }
+  .chrome{ max-width:880px; margin:0 auto; }
   header.site{
     display:flex;
     flex-wrap:wrap;
@@ -77,34 +76,34 @@
     text-wrap:balance;
   }
   .site-title .leafmark{ color:var(--leaf); }
-  .site-sub{
-    margin:6px 0 0;
-    color:var(--ink-soft);
-    max-width:52ch;
-  }
-  .print-btn{
+  .site-sub{ margin:6px 0 0; color:var(--ink-soft); max-width:52ch; }
+
+  .btn{
     font-family:var(--font-body);
     font-weight:700;
     font-size:.8rem;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--paper);
-    background:var(--leaf);
-    border:none;
     border-radius:999px;
     padding:10px 22px;
     cursor:pointer;
+    border:1.5px solid var(--leaf);
+    background:none;
+    color:var(--leaf);
   }
-  .print-btn:hover{ background:var(--leaf-dark); }
-  .print-btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .btn.primary{ background:var(--leaf); color:var(--paper); }
+  .btn.primary:hover{ background:var(--leaf-dark); }
+  .btn:hover{ border-color:var(--leaf-dark); }
+  .btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .btn.small{ padding:5px 14px; font-size:.7rem; }
+  .btn.danger{ border-color:var(--clay); color:var(--clay); }
 
   nav.tabs{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
     border-bottom:1px solid var(--hairline);
-    padding-bottom:0;
-    margin-bottom:36px;
+    margin-bottom:28px;
   }
   .tab{
     font-family:var(--font-body);
@@ -119,11 +118,85 @@
     padding:10px 14px 12px;
     cursor:pointer;
   }
-  .tab[aria-selected="true"]{
-    color:var(--leaf);
-    border-bottom-color:var(--leaf);
-  }
+  .tab[aria-selected="true"]{ color:var(--leaf); border-bottom-color:var(--leaf); }
   .tab:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+
+  /* ---------- toolbar + index ---------- */
+  .toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  .search-wrap{ flex:1; min-width:200px; position:relative; }
+  #search{
+    width:100%;
+    font-family:var(--font-body);
+    font-size:.95rem;
+    color:var(--ink);
+    background:var(--card);
+    border:1.5px solid var(--hairline);
+    border-radius:999px;
+    padding:9px 18px;
+  }
+  #search::placeholder{ color:var(--ink-soft); }
+  #search:focus-visible{ outline:2px solid var(--leaf); outline-offset:1px; }
+  .count{
+    font-size:.78rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .sync-note{
+    width:100%;
+    font-size:.8rem;
+    color:var(--ink-soft);
+  }
+
+  .index-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
+    gap:12px;
+    max-width:880px;
+    margin:0 auto 36px;
+  }
+  .index-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+    font-family:var(--font-body);
+    background:var(--card);
+    border:1.5px solid var(--hairline);
+    border-radius:8px;
+    padding:10px 12px;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  .index-card:hover{ border-color:var(--leaf); }
+  .index-card:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  .index-thumb{
+    width:44px; height:44px;
+    flex:none;
+    border-radius:50%;
+    background:var(--desk-deep);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+  }
+  .index-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .index-name{ font-weight:700; font-size:.92rem; line-height:1.25; }
+  .index-sci{ font-style:italic; font-size:.78rem; color:var(--ink-soft); line-height:1.3; }
+  .empty-note{
+    max-width:880px;
+    margin:0 auto 28px;
+    color:var(--ink-soft);
+    font-size:.9rem;
+  }
 
   /* ---------- printable sheets ---------- */
   /* Sheets are paper: they stay light in both themes, like the printed page they become. */
@@ -135,8 +208,15 @@
     padding:44px 46px 40px;
     box-shadow:var(--shadow);
     border-radius:2px;
+    position:relative;
   }
   .sheet, .sheet *{ --line:#20261F; }
+  .sheet-actions{
+    position:absolute;
+    top:12px; right:12px;
+    display:flex;
+    gap:8px;
+  }
 
   .script-h{
     font-family:var(--font-script);
@@ -155,9 +235,7 @@
   }
   .plant-id .sci{ font-weight:400; font-style:italic; color:#5C6A5F; }
 
-  .box{
-    border:1.5px solid var(--line);
-  }
+  .box{ border:1.5px solid var(--line); }
   .box-title{
     font-weight:700;
     font-size:.72rem;
@@ -168,18 +246,13 @@
     padding:7px 8px;
   }
 
-  /* top region: title/photo left, general info right */
   .top-grid{
     display:grid;
     grid-template-columns:5fr 6fr;
     gap:22px;
     margin-bottom:22px;
   }
-  .photo-box{
-    margin-top:14px;
-    display:flex;
-    flex-direction:column;
-  }
+  .photo-box{ margin-top:14px; display:flex; flex-direction:column; }
   .photo-well{
     flex:1;
     min-height:230px;
@@ -188,11 +261,7 @@
     justify-content:center;
     overflow:hidden;
   }
-  .photo-well img{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-  }
+  .photo-well img{ width:100%; height:100%; object-fit:cover; display:block; }
   .photo-hint{
     font-size:.72rem;
     letter-spacing:.06em;
@@ -200,10 +269,7 @@
     text-transform:uppercase;
   }
 
-  table.info{
-    width:100%;
-    border-collapse:collapse;
-  }
+  table.info{ width:100%; border-collapse:collapse; }
   table.info th{
     font-weight:700;
     font-size:.72rem;
@@ -214,13 +280,8 @@
     padding:9px 10px;
     border:1.5px solid var(--line);
   }
-  table.info td{
-    border:1.5px solid var(--line);
-    padding:9px 10px;
-    font-size:.9rem;
-  }
+  table.info td{ border:1.5px solid var(--line); padding:9px 10px; font-size:.9rem; }
 
-  /* checkbox groups */
   .cb-row{ display:flex; flex-direction:column; gap:7px; }
   .cb{ display:flex; align-items:center; gap:7px; font-size:.82rem; }
   .cb .sq{
@@ -241,10 +302,7 @@
     gap:22px;
     margin-bottom:22px;
   }
-  .care-box .care-cols{
-    display:grid;
-    grid-template-columns:1fr 1fr 1.2fr;
-  }
+  .care-box .care-cols{ display:grid; grid-template-columns:1fr 1fr 1.2fr; }
   .care-box .care-col{ padding:10px 12px; }
   .care-box .care-col + .care-col{ border-left:1.5px solid var(--line); }
   .care-box .care-col h4, .uses-box h4{
@@ -253,11 +311,7 @@
     letter-spacing:.1em;
     text-transform:uppercase;
   }
-  .care-head{
-    display:grid;
-    grid-template-columns:1fr 1fr 1.2fr;
-    border-bottom:1.5px solid var(--line);
-  }
+  .care-head{ display:grid; grid-template-columns:1fr 1fr 1.2fr; border-bottom:1.5px solid var(--line); }
   .care-head div{
     font-weight:700;
     font-size:.72rem;
@@ -274,9 +328,7 @@
     gap:8px 10px;
     padding:12px 14px;
   }
-  .uses-grid .cb.other .fill-line{ flex:1; }
 
-  /* pruning — the new section, set apart in clay */
   .pruning-box{ border-color:var(--clay); margin-bottom:22px; }
   .pruning-box .box-title{
     border-bottom-color:var(--clay);
@@ -287,11 +339,7 @@
     gap:8px;
   }
   .pruning-box .box-title .snips{ font-size:.9rem; }
-  .pruning-grid{
-    display:grid;
-    grid-template-columns:1.1fr 1.3fr 1.6fr;
-    gap:0;
-  }
+  .pruning-grid{ display:grid; grid-template-columns:1.1fr 1.3fr 1.6fr; }
   .pruning-col{ padding:12px 14px; }
   .pruning-col + .pruning-col{ border-left:1.5px solid var(--clay); }
   .pruning-col h4{
@@ -301,11 +349,7 @@
     text-transform:uppercase;
     color:var(--clay);
   }
-  .pruning-methods{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:7px 10px;
-  }
+  .pruning-methods{ display:grid; grid-template-columns:1fr 1fr; gap:7px 10px; }
   .pruning-fields{ display:flex; flex-direction:column; gap:12px; }
   .field{
     display:flex;
@@ -335,16 +379,8 @@
     color:var(--clay);
   }
 
-  /* bottom region: log + pests */
-  .bottom-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-  }
-  table.log{
-    width:100%;
-    border-collapse:collapse;
-  }
+  .bottom-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  table.log{ width:100%; border-collapse:collapse; }
   table.log th{
     font-weight:700;
     font-size:.72rem;
@@ -360,7 +396,7 @@
     height:30px;
     font-size:.86rem;
   }
-  .notes-lines{ padding:14px; display:flex; flex-direction:column; gap:0; }
+  .notes-lines{ padding:14px; display:flex; flex-direction:column; }
   .notes-lines .fill-line{ min-height:2em; display:flex; align-items:flex-end; padding-bottom:2px; }
   .notes-lines .fill-line.filled-text{ border-bottom-color:transparent; }
 
@@ -376,34 +412,21 @@
   }
   .sheet-foot .leafmark{ color:var(--leaf); letter-spacing:0; }
 
-  /* ---------- watering schedule sheet ---------- */
-  table.week{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:16px;
-  }
+  /* ---------- watering schedule ---------- */
+  table.week{ width:100%; border-collapse:collapse; margin-top:16px; }
   table.week th, table.week td{
     border:1.5px solid var(--line);
     padding:7px 6px;
     font-size:.8rem;
     text-align:center;
   }
-  table.week th{
-    font-weight:700;
-    font-size:.7rem;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-  }
+  table.week th{ font-weight:700; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; }
   table.week th:first-child{ width:26%; text-align:left; padding-left:10px; }
   table.week td:first-child{ text-align:left; padding-left:10px; }
   table.week td{ height:32px; }
-  .sheet-note{
-    margin:10px 0 0;
-    font-size:.8rem;
-    color:#5C6A5F;
-  }
+  .sheet-note{ margin:10px 0 0; font-size:.8rem; color:#5C6A5F; }
 
-  /* ---------- weekly planner sheet ---------- */
+  /* ---------- weekly planner ---------- */
   .week-of{
     display:flex;
     align-items:baseline;
@@ -415,11 +438,7 @@
     text-transform:uppercase;
   }
   .week-of .fill-line{ width:220px; }
-  .planner-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
+  .planner-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   .day-box{ border:1.5px solid var(--line); }
   .day-box h4{
     margin:0;
@@ -442,13 +461,91 @@
   .day-lines .fill-line{ min-height:1.7em; }
   .tasks-box{ border:1.5px solid var(--leaf); }
   .tasks-box h4{ border-bottom-color:var(--leaf); color:var(--leaf); }
-  .tasks-box .cb{ padding:4px 0; }
   .tasks-box .day-lines{ display:flex; flex-direction:column; gap:2px; }
+  .tasks-box .cb{ padding:4px 0; }
+
+  /* ---------- editor dialog ---------- */
+  dialog#editor{
+    border:none;
+    border-radius:6px;
+    padding:0;
+    width:min(680px, calc(100vw - 32px));
+    max-height:calc(100vh - 48px);
+    background:var(--paper);
+    color:#20261F;
+    box-shadow:var(--shadow);
+  }
+  dialog#editor::backdrop{ background:rgba(30,36,31,.55); }
+  .ed-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 24px 12px;
+    border-bottom:1.5px solid #20261F;
+    position:sticky; top:0;
+    background:var(--paper);
+    z-index:2;
+  }
+  .ed-head h2{ font-family:var(--font-script); font-weight:600; font-size:2rem; margin:0; }
+  .ed-body{ padding:18px 24px 24px; display:flex; flex-direction:column; gap:18px; }
+  .ed-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; }
+  .ed-field{ display:flex; flex-direction:column; gap:4px; }
+  .ed-field.wide{ grid-column:1 / -1; }
+  .ed-field label, .ed-group > legend{
+    font-size:.7rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#5C6A5F;
+  }
+  .ed-field input[type=text], .ed-field textarea{
+    font-family:var(--font-body);
+    font-size:.92rem;
+    color:#20261F;
+    background:#fff;
+    border:1.5px solid #B9C2B6;
+    border-radius:4px;
+    padding:8px 10px;
+  }
+  .ed-field input:focus-visible, .ed-field textarea:focus-visible{ outline:2px solid var(--leaf); }
+  .ed-field textarea{ resize:vertical; min-height:64px; }
+  .ed-group{ border:1.5px solid #B9C2B6; border-radius:4px; padding:10px 12px 12px; margin:0; }
+  .ed-group.pruning{ border-color:var(--clay); }
+  .ed-group.pruning > legend{ color:var(--clay); }
+  .ed-choices{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:6px; }
+  .ed-choices label{
+    display:flex; align-items:center; gap:6px;
+    font-size:.85rem;
+    cursor:pointer;
+  }
+  .ed-choices input{ accent-color:var(--leaf); }
+  .ed-group.pruning .ed-choices input{ accent-color:var(--clay); }
+  .ed-photo-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .ed-photo-preview{
+    width:72px; height:72px;
+    border-radius:6px;
+    border:1.5px solid #B9C2B6;
+    object-fit:cover;
+    background:#EFF2EC;
+  }
+  .ed-foot{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding:14px 24px;
+    border-top:1.5px solid #20261F;
+    position:sticky; bottom:0;
+    background:var(--paper);
+  }
+  .ed-status{ font-size:.82rem; color:#5C6A5F; flex:1; }
+  .ed-status.error{ color:#A03A2A; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 700px){
     .sheet{ padding:26px 20px; }
-    .top-grid, .mid-grid, .bottom-grid, .planner-grid{ grid-template-columns:1fr; }
+    .sheet-actions{ position:static; justify-content:flex-end; margin-bottom:10px; }
+    .top-grid, .mid-grid, .bottom-grid, .planner-grid, .ed-grid{ grid-template-columns:1fr; }
     .pruning-grid{ grid-template-columns:1fr; }
     .pruning-col + .pruning-col{ border-left:none; border-top:1.5px solid var(--clay); }
     .care-box .care-cols{ grid-template-columns:1fr; }
@@ -463,7 +560,8 @@
   /* ---------- print ---------- */
   @media print{
     body{ background:#fff; padding:0; }
-    header.site, nav.tabs, .print-btn, .photo-hint{ display:none !important; }
+    header.site, nav.tabs, .toolbar, .index-grid, .empty-note,
+    .btn, .sheet-actions, .photo-hint, dialog{ display:none !important; }
     .page[hidden]{ display:block !important; }
     .sheet{
       box-shadow:none;
@@ -481,9 +579,9 @@
   <header class="site">
     <div>
       <h1 class="site-title">The Garden Book <span class="leafmark">❦</span></h1>
-      <p class="site-sub">A printable plant journal — profile sheets for every plant in the garden, with a watering schedule and weekly planner to keep it all growing.</p>
+      <p class="site-sub">Our plant journal — a profile sheet for every plant in the garden, with a watering schedule and weekly planner to keep it all growing.</p>
     </div>
-    <button class="print-btn" onclick="window.print()">Print sheets</button>
+    <button class="btn primary" id="print-btn">Print sheets</button>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Garden book pages">
@@ -496,6 +594,18 @@
 <main>
   <!-- ============ PLANT PROFILES ============ -->
   <section class="page" id="page-profiles" role="tabpanel" aria-labelledby="tab-profiles">
+    <div class="chrome">
+      <div class="toolbar">
+        <div class="search-wrap">
+          <input type="search" id="search" placeholder="Search plants by name…" aria-label="Search plants">
+        </div>
+        <span class="count" id="plant-count"></span>
+        <button class="btn" id="add-plant" hidden>＋ Add plant</button>
+        <p class="sync-note" id="sync-note" hidden></p>
+      </div>
+    </div>
+    <div class="index-grid" id="index"></div>
+    <p class="empty-note" id="empty-note" hidden></p>
     <div id="profiles"></div>
   </section>
 
@@ -528,51 +638,152 @@
   </section>
 </main>
 
+<!-- ============ PLANT EDITOR ============ -->
+<dialog id="editor" aria-labelledby="editor-title">
+  <form id="editor-form" novalidate>
+    <div class="ed-head">
+      <h2 id="editor-title">Add a plant</h2>
+      <button type="button" class="btn small" id="ed-close">Close</button>
+    </div>
+    <div class="ed-body">
+      <div class="ed-grid">
+        <div class="ed-field"><label for="f-name">Plant name *</label><input type="text" id="f-name" required></div>
+        <div class="ed-field"><label for="f-sci">Scientific name</label><input type="text" id="f-sci"></div>
+        <div class="ed-field wide">
+          <label for="f-photo">Photo</label>
+          <div class="ed-photo-row">
+            <img class="ed-photo-preview" id="f-photo-preview" alt="" hidden>
+            <input type="file" id="f-photo" accept="image/*">
+          </div>
+        </div>
+        <div class="ed-field"><label for="f-origin">Origin</label><input type="text" id="f-origin"></div>
+        <div class="ed-field"><label for="f-prop">Propagation</label><input type="text" id="f-prop"></div>
+        <div class="ed-field"><label for="f-type">Type</label><input type="text" id="f-type" placeholder="e.g. Perennial herb"></div>
+        <div class="ed-field"><label for="f-temp">Ideal temp</label><input type="text" id="f-temp" placeholder="e.g. 55–80 °F"></div>
+        <div class="ed-field"><label for="f-soil">Soil type</label><input type="text" id="f-soil"></div>
+        <div class="ed-field"><label for="f-fert">Fertilizer</label><input type="text" id="f-fert"></div>
+      </div>
+
+      <div class="ed-grid">
+        <fieldset class="ed-group"><legend>Sunlight</legend>
+          <div class="ed-choices" id="g-sunlight"></div>
+        </fieldset>
+        <fieldset class="ed-group"><legend>Water</legend>
+          <div class="ed-choices" id="g-water"></div>
+        </fieldset>
+        <fieldset class="ed-group"><legend>Toxicity</legend>
+          <div class="ed-choices" id="g-toxicity"></div>
+        </fieldset>
+        <fieldset class="ed-group"><legend>Plant uses</legend>
+          <div class="ed-choices" id="g-uses"></div>
+        </fieldset>
+      </div>
+
+      <fieldset class="ed-group pruning"><legend>✂ Pruning</legend>
+        <div class="ed-grid" style="margin-top:8px;">
+          <div class="ed-field"><label>Best season</label><div class="ed-choices" id="g-seasons"></div></div>
+          <div class="ed-field"><label>Method</label><div class="ed-choices" id="g-methods"></div></div>
+          <div class="ed-field"><label for="f-freq">Frequency</label><input type="text" id="f-freq" placeholder="e.g. After flowering"></div>
+          <div class="ed-field"><label for="f-tools">Tools</label><input type="text" id="f-tools" placeholder="e.g. Bypass pruners"></div>
+          <div class="ed-field"><label for="f-lastpruned">Last pruned</label><input type="text" id="f-lastpruned"></div>
+          <div class="ed-field wide"><label for="f-prunenotes">Pruning notes</label><textarea id="f-prunenotes" placeholder="Where to cut, what to leave, how it responded…"></textarea></div>
+        </div>
+      </fieldset>
+
+      <div class="ed-grid">
+        <div class="ed-field wide"><label for="f-pests">Pests / diseases &amp; treatment</label><textarea id="f-pests"></textarea></div>
+        <div class="ed-field wide">
+          <label for="f-log">Plant log — one entry per line, as <em style="text-transform:none;">date | note</em></label>
+          <textarea id="f-log" placeholder="2026-04-02 | Potted up into terracotta&#10;2026-05-11 | First flowers"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="ed-foot">
+      <span class="ed-status" id="ed-status"></span>
+      <button type="button" class="btn danger small" id="ed-delete" hidden>Delete plant</button>
+      <button type="submit" class="btn primary" id="ed-save">Save plant</button>
+    </div>
+  </form>
+</dialog>
+
 <script src="plants.js"></script>
 <script>
 (function(){
   "use strict";
 
-  /* ---------- small builders ---------- */
+  var SUNLIGHT = ["Sun", "Part Shade", "Shade"];
+  var WATER = ["Low", "Medium", "High"];
+  var TOXICITY = ["Human Safe", "Pet Safe"];
+  var USES = ["Edible", "Medicinal", "Decorative", "Spice", "Dye", "Tea", "Repellant", "Other"];
+  var SEASONS = ["Spring", "Summer", "Autumn", "Winter"];
+  var METHODS = ["Pinch", "Deadhead", "Thin", "Cut Back", "Shear", "Limb Up"];
+
+  var state = {
+    plants: (typeof PLANTS !== "undefined" && Array.isArray(PLANTS)) ? PLANTS.slice() : [],
+    search: "",
+    db: null,
+    assets: null,
+    editingId: null
+  };
+
+  /* ---------- helpers ---------- */
   function esc(s){
     return String(s == null ? "" : s)
       .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   }
-  function cb(label, checked, extraClass){
-    return '<span class="cb ' + (checked ? "checked " : "") + (extraClass || "") + '">' +
+  function cb(label, checked){
+    return '<span class="cb' + (checked ? " checked" : "") + '">' +
            '<span class="sq" aria-hidden="true"></span>' + esc(label) + '</span>';
   }
-  function has(list, value){
-    return Array.isArray(list) && list.indexOf(value) !== -1;
-  }
-  function fillLine(text){
-    return '<span class="fill-line">' + esc(text || "") + '</span>';
-  }
+  function has(list, value){ return Array.isArray(list) && list.indexOf(value) !== -1; }
+  function fillLine(text){ return '<span class="fill-line">' + esc(text || "") + '</span>'; }
   function infoRow(label, value){
     return '<tr><th scope="row">' + label + '</th><td>' + esc(value || "") + '</td></tr>';
   }
   function noteLines(text, count){
     if (text){
-      return '<div class="fill-line filled-text">' + esc(text) + '</div>' +
+      var filled = esc(text).replace(/\n/g, "<br>");
+      return '<div class="fill-line filled-text">' + filled + '</div>' +
              Array(Math.max(count - 1, 0)).fill('<div class="fill-line"></div>').join("");
     }
     return Array(count).fill('<div class="fill-line"></div>').join("");
   }
+  function photoSrc(p){
+    if (p.photoAsset) return "/_blob/" + p.photoAsset;
+    if (p.photoData) return p.photoData;
+    if (p.photo) return p.photo;
+    return null;
+  }
+  function sortName(p){ return (p.name || "￿").toLowerCase(); }
+  function visiblePlants(){
+    var q = state.search.trim().toLowerCase();
+    var list = state.plants.slice().sort(function(a, b){
+      return sortName(a) < sortName(b) ? -1 : 1;
+    });
+    if (!q) return list;
+    return list.filter(function(p){
+      return (p.name || "").toLowerCase().indexOf(q) !== -1 ||
+             (p.scientificName || "").toLowerCase().indexOf(q) !== -1;
+    });
+  }
 
-  /* ---------- plant profile sheet ---------- */
-  function profileSheet(p){
-    p = p || {};
+  /* ---------- profile sheet ---------- */
+  function profileSheet(p, canEdit){
     var pr = p.pruning || {};
-    var logRows = "";
     var log = Array.isArray(p.log) ? p.log : [];
-    for (var i = 0; i < 9; i++){
+    var logRows = "";
+    var rowTotal = Math.max(9, log.length + 2);
+    for (var i = 0; i < rowTotal; i++){
       var entry = log[i] || {};
       logRows += '<tr><td>' + esc(entry.date || "") + '</td><td>' + esc(entry.entry || "") + '</td></tr>';
     }
+    var src = photoSrc(p);
 
     return '' +
-    '<article class="sheet">' +
-
+    '<article class="sheet" id="plant-' + esc(p._id || "blank") + '">' +
+      (canEdit && p._id
+        ? '<div class="sheet-actions"><button class="btn small" data-edit="' + esc(p._id) + '">Edit</button></div>'
+        : '') +
       '<div class="top-grid">' +
         '<div>' +
           '<h2 class="script-h">Plant Profile</h2>' +
@@ -582,8 +793,8 @@
           '<div class="box photo-box">' +
             '<div class="box-title">Photo</div>' +
             '<div class="photo-well">' +
-              (p.photo
-                ? '<img src="' + esc(p.photo) + '" alt="' + esc(p.name || "Plant photo") + '">'
+              (src
+                ? '<img src="' + esc(src) + '" alt="' + esc(p.name || "Plant photo") + '" loading="lazy">'
                 : '<span class="photo-hint">Photo to come</span>') +
             '</div>' +
           '</div>' +
@@ -608,34 +819,20 @@
           '<div class="care-head"><div>Sunlight</div><div>Water</div><div>Toxicity</div></div>' +
           '<div class="care-cols">' +
             '<div class="care-col"><h4>Sunlight</h4><div class="cb-row">' +
-              cb("Sun", p.sunlight === "Sun") +
-              cb("Part Shade", p.sunlight === "Part Shade") +
-              cb("Shade", p.sunlight === "Shade") +
+              SUNLIGHT.map(function(v){ return cb(v, p.sunlight === v); }).join("") +
             '</div></div>' +
             '<div class="care-col"><h4>Water</h4><div class="cb-row">' +
-              cb("Low", p.water === "Low") +
-              cb("Medium", p.water === "Medium") +
-              cb("High", p.water === "High") +
+              WATER.map(function(v){ return cb(v, p.water === v); }).join("") +
             '</div></div>' +
             '<div class="care-col"><h4>Toxicity</h4><div class="cb-row">' +
-              cb("Human Safe", has(p.toxicity, "Human Safe")) +
-              cb("Pet Safe", has(p.toxicity, "Pet Safe")) +
+              TOXICITY.map(function(v){ return cb(v, has(p.toxicity, v)); }).join("") +
             '</div></div>' +
           '</div>' +
         '</div>' +
         '<div class="box uses-box">' +
           '<div class="box-title">Plant Uses</div>' +
           '<div class="uses-grid">' +
-            cb("Edible", has(p.uses, "Edible")) +
-            cb("Medicinal", has(p.uses, "Medicinal")) +
-            cb("Decorative", has(p.uses, "Decorative")) +
-            cb("Spice", has(p.uses, "Spice")) +
-            cb("Dye", has(p.uses, "Dye")) +
-            cb("Tea", has(p.uses, "Tea")) +
-            cb("Repellant", has(p.uses, "Repellant")) +
-            '<span class="cb other ' + (has(p.uses, "Other") ? "checked" : "") + '" style="grid-column: span 2;">' +
-              '<span class="sq" aria-hidden="true"></span>Other' + fillLine("") +
-            '</span>' +
+            USES.map(function(v){ return cb(v, has(p.uses, v)); }).join("") +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -646,21 +843,13 @@
           '<div class="pruning-col">' +
             '<h4>Best Season</h4>' +
             '<div class="cb-row">' +
-              cb("Spring", has(pr.seasons, "Spring")) +
-              cb("Summer", has(pr.seasons, "Summer")) +
-              cb("Autumn", has(pr.seasons, "Autumn")) +
-              cb("Winter", has(pr.seasons, "Winter")) +
+              SEASONS.map(function(v){ return cb(v, has(pr.seasons, v)); }).join("") +
             '</div>' +
           '</div>' +
           '<div class="pruning-col">' +
             '<h4>Method</h4>' +
             '<div class="pruning-methods">' +
-              cb("Pinch", has(pr.methods, "Pinch")) +
-              cb("Deadhead", has(pr.methods, "Deadhead")) +
-              cb("Thin", has(pr.methods, "Thin")) +
-              cb("Cut Back", has(pr.methods, "Cut Back")) +
-              cb("Shear", has(pr.methods, "Shear")) +
-              cb("Limb Up", has(pr.methods, "Limb Up")) +
+              METHODS.map(function(v){ return cb(v, has(pr.methods, v)); }).join("") +
             '</div>' +
           '</div>' +
           '<div class="pruning-col">' +
@@ -694,27 +883,81 @@
     '</article>';
   }
 
-  var plants = (typeof PLANTS !== "undefined" && PLANTS.length) ? PLANTS : [null];
-  document.getElementById("profiles").innerHTML = plants.map(profileSheet).join("");
+  /* ---------- rendering ---------- */
+  var elIndex = document.getElementById("index");
+  var elProfiles = document.getElementById("profiles");
+  var elCount = document.getElementById("plant-count");
+  var elEmpty = document.getElementById("empty-note");
 
-  /* ---------- watering schedule rows ---------- */
-  var wateringRows = "";
-  var rowCount = 12;
-  for (var r = 0; r < rowCount; r++){
-    var plantName = (typeof PLANTS !== "undefined" && PLANTS[r] && PLANTS[r].name) ? PLANTS[r].name : "";
-    wateringRows += '<tr><td>' + esc(plantName) + '</td>' +
-      Array(7).fill('<td></td>').join("") + '</tr>';
+  function render(){
+    var canEdit = !!state.db;
+    var list = visiblePlants();
+    var total = state.plants.length;
+
+    elCount.textContent = total === 0 ? "No plants yet"
+      : (list.length === total ? total + (total === 1 ? " plant" : " plants")
+        : list.length + " of " + total + " plants");
+
+    elIndex.innerHTML = list.map(function(p){
+      var src = photoSrc(p);
+      return '<button type="button" class="index-card" data-goto="' + esc(p._id) + '">' +
+        '<span class="index-thumb">' + (src
+          ? '<img src="' + esc(src) + '" alt="" loading="lazy">'
+          : '<span aria-hidden="true">🌱</span>') + '</span>' +
+        '<span><span class="index-name">' + esc(p.name || "Unnamed") + '</span>' +
+        (p.scientificName ? '<br><span class="index-sci">' + esc(p.scientificName) + '</span>' : '') +
+        '</span></button>';
+    }).join("");
+
+    if (total === 0){
+      elEmpty.hidden = false;
+      elEmpty.textContent = canEdit
+        ? "The book is empty — press “Add plant” to start your first profile. The blank sheet below is what each profile will look like (and prints as a fill-in-by-hand template)."
+        : "No plants yet — the blank sheet below is the printable template.";
+      elProfiles.innerHTML = profileSheet({}, false);
+    } else {
+      elEmpty.hidden = list.length !== 0;
+      elEmpty.textContent = "No plants match your search.";
+      elProfiles.innerHTML = list.map(function(p){ return profileSheet(p, canEdit); }).join("");
+    }
+
+    renderWatering(list);
   }
-  document.getElementById("watering-rows").innerHTML = wateringRows;
 
-  /* ---------- weekly planner days ---------- */
+  function renderWatering(list){
+    var rows = Math.max(12, list.length + 2);
+    var html = "";
+    for (var r = 0; r < rows; r++){
+      var name = list[r] ? (list[r].name || "") : "";
+      html += '<tr><td>' + esc(name) + '</td>' + Array(7).fill('<td></td>').join("") + '</tr>';
+    }
+    document.getElementById("watering-rows").innerHTML = html;
+  }
+
+  /* index card click + edit buttons (delegated) */
+  document.addEventListener("click", function(ev){
+    var goto = ev.target.closest("[data-goto]");
+    if (goto){
+      var sheet = document.getElementById("plant-" + goto.getAttribute("data-goto"));
+      if (sheet) sheet.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    var edit = ev.target.closest("[data-edit]");
+    if (edit) openEditor(edit.getAttribute("data-edit"));
+  });
+
+  document.getElementById("search").addEventListener("input", function(ev){
+    state.search = ev.target.value;
+    render();
+  });
+  document.getElementById("print-btn").addEventListener("click", function(){ window.print(); });
+
+  /* ---------- weekly planner (static) ---------- */
   var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
   var dayBoxes = days.map(function(d){
     return '<div class="day-box">' +
       '<h4><span class="script-day">' + d.slice(0,3) + '</span>' + d + '</h4>' +
-      '<div class="day-lines">' +
-        '<div class="fill-line"></div><div class="fill-line"></div><div class="fill-line"></div>' +
-      '</div>' +
+      '<div class="day-lines"><div class="fill-line"></div><div class="fill-line"></div><div class="fill-line"></div></div>' +
     '</div>';
   });
   dayBoxes.push(
@@ -740,6 +983,242 @@
       });
     });
   });
+
+  /* ---------- editor ---------- */
+  var dlg = document.getElementById("editor");
+  var form = document.getElementById("editor-form");
+  var statusEl = document.getElementById("ed-status");
+  var deleteBtn = document.getElementById("ed-delete");
+  var saveBtn = document.getElementById("ed-save");
+  var photoInput = document.getElementById("f-photo");
+  var photoPreview = document.getElementById("f-photo-preview");
+
+  function choices(containerId, name, options, type){
+    var el = document.getElementById(containerId);
+    el.innerHTML = options.map(function(v, i){
+      var id = name + "-" + i;
+      return '<label for="' + id + '"><input type="' + type + '" name="' + name + '" id="' + id +
+             '" value="' + esc(v) + '">' + esc(v) + '</label>';
+    }).join("");
+  }
+  choices("g-sunlight", "sunlight", SUNLIGHT, "radio");
+  choices("g-water", "water", WATER, "radio");
+  choices("g-toxicity", "toxicity", TOXICITY, "checkbox");
+  choices("g-uses", "uses", USES, "checkbox");
+  choices("g-seasons", "seasons", SEASONS, "checkbox");
+  choices("g-methods", "methods", METHODS, "checkbox");
+
+  function setChecks(name, values, single){
+    Array.prototype.forEach.call(form.querySelectorAll('[name="' + name + '"]'), function(input){
+      input.checked = single ? input.value === values : has(values, input.value);
+    });
+  }
+  function getChecks(name){
+    return Array.prototype.slice.call(form.querySelectorAll('[name="' + name + '"]:checked'))
+      .map(function(i){ return i.value; });
+  }
+
+  function openEditor(id){
+    var p = id ? state.plants.filter(function(x){ return x._id === id; })[0] : null;
+    state.editingId = id || null;
+    document.getElementById("editor-title").textContent = p ? "Edit " + (p.name || "plant") : "Add a plant";
+    deleteBtn.hidden = !p;
+    statusEl.textContent = "";
+    statusEl.classList.remove("error");
+    p = p || {};
+    var pr = p.pruning || {};
+    document.getElementById("f-name").value = p.name || "";
+    document.getElementById("f-sci").value = p.scientificName || "";
+    document.getElementById("f-origin").value = p.origin || "";
+    document.getElementById("f-prop").value = p.propagation || "";
+    document.getElementById("f-type").value = p.type || "";
+    document.getElementById("f-temp").value = p.idealTemp || "";
+    document.getElementById("f-soil").value = p.soilType || "";
+    document.getElementById("f-fert").value = p.fertilizer || "";
+    document.getElementById("f-freq").value = pr.frequency || "";
+    document.getElementById("f-tools").value = pr.tools || "";
+    document.getElementById("f-lastpruned").value = pr.lastPruned || "";
+    document.getElementById("f-prunenotes").value = pr.notes || "";
+    document.getElementById("f-pests").value = p.pests || "";
+    document.getElementById("f-log").value = (Array.isArray(p.log) ? p.log : [])
+      .map(function(e){ return (e.date || "") + " | " + (e.entry || ""); }).join("\n");
+    setChecks("sunlight", p.sunlight || "", true);
+    setChecks("water", p.water || "", true);
+    setChecks("toxicity", p.toxicity || []);
+    setChecks("uses", p.uses || []);
+    setChecks("seasons", pr.seasons || []);
+    setChecks("methods", pr.methods || []);
+    photoInput.value = "";
+    var src = photoSrc(p);
+    photoPreview.hidden = !src;
+    if (src) photoPreview.src = src;
+    photoInput.parentElement.parentElement.hidden = !state.assets;
+    dlg.showModal();
+  }
+
+  document.getElementById("add-plant").addEventListener("click", function(){ openEditor(null); });
+  document.getElementById("ed-close").addEventListener("click", function(){ dlg.close(); });
+
+  photoInput.addEventListener("change", function(){
+    var f = photoInput.files && photoInput.files[0];
+    if (!f) return;
+    photoPreview.src = URL.createObjectURL(f);
+    photoPreview.hidden = false;
+  });
+
+  /* Downscale a photo to keep storage lean (max 1000px, JPEG). */
+  function shrinkPhoto(file){
+    return new Promise(function(resolve, reject){
+      var img = new Image();
+      var url = URL.createObjectURL(file);
+      img.onload = function(){
+        URL.revokeObjectURL(url);
+        var max = 1000;
+        var scale = Math.min(1, max / Math.max(img.width, img.height));
+        var canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(function(blob){
+          blob ? resolve(blob) : reject(new Error("Could not process the photo."));
+        }, "image/jpeg", 0.85);
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); reject(new Error("That file doesn't look like an image.")); };
+      img.src = url;
+    });
+  }
+
+  function parseLog(text){
+    return text.split("\n").map(function(line){
+      line = line.trim();
+      if (!line) return null;
+      var idx = line.indexOf("|");
+      return idx === -1
+        ? { date: "", entry: line }
+        : { date: line.slice(0, idx).trim(), entry: line.slice(idx + 1).trim() };
+    }).filter(Boolean);
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    if (!state.db) return;
+    var name = document.getElementById("f-name").value.trim();
+    if (!name){
+      statusEl.textContent = "Give the plant a name first.";
+      statusEl.classList.add("error");
+      return;
+    }
+    saveBtn.disabled = true;
+    statusEl.classList.remove("error");
+    statusEl.textContent = "Saving…";
+
+    var existing = state.editingId
+      ? state.plants.filter(function(x){ return x._id === state.editingId; })[0]
+      : null;
+
+    var doc = {
+      name: name,
+      scientificName: document.getElementById("f-sci").value.trim(),
+      origin: document.getElementById("f-origin").value.trim(),
+      propagation: document.getElementById("f-prop").value.trim(),
+      type: document.getElementById("f-type").value.trim(),
+      idealTemp: document.getElementById("f-temp").value.trim(),
+      soilType: document.getElementById("f-soil").value.trim(),
+      fertilizer: document.getElementById("f-fert").value.trim(),
+      sunlight: getChecks("sunlight")[0] || "",
+      water: getChecks("water")[0] || "",
+      toxicity: getChecks("toxicity"),
+      uses: getChecks("uses"),
+      pruning: {
+        seasons: getChecks("seasons"),
+        methods: getChecks("methods"),
+        frequency: document.getElementById("f-freq").value.trim(),
+        tools: document.getElementById("f-tools").value.trim(),
+        lastPruned: document.getElementById("f-lastpruned").value.trim(),
+        notes: document.getElementById("f-prunenotes").value.trim()
+      },
+      pests: document.getElementById("f-pests").value.trim(),
+      log: parseLog(document.getElementById("f-log").value),
+      photoAsset: existing ? (existing.photoAsset || "") : "",
+      photoData: existing ? (existing.photoData || "") : "",
+      updatedAt: new Date().toISOString(),
+      createdAt: existing && existing.createdAt ? existing.createdAt : new Date().toISOString()
+    };
+
+    var photoStep = Promise.resolve();
+    var file = photoInput.files && photoInput.files[0];
+    var oldAsset = existing ? existing.photoAsset : "";
+    if (file && state.assets){
+      photoStep = shrinkPhoto(file).then(function(blob){
+        return state.assets.upload(blob);
+      }).then(function(res){
+        doc.photoAsset = res.id;
+        doc.photoData = "";
+      });
+    }
+
+    photoStep.then(function(){
+      var col = state.db.collection("plants");
+      return state.editingId ? col.doc(state.editingId).set(doc) : col.add(doc);
+    }).then(function(){
+      if (file && oldAsset && oldAsset !== doc.photoAsset && state.assets){
+        state.assets.delete(oldAsset).catch(function(){});
+      }
+      saveBtn.disabled = false;
+      dlg.close();
+    }).catch(function(err){
+      saveBtn.disabled = false;
+      statusEl.classList.add("error");
+      statusEl.textContent = "Couldn't save: " + ((err && err.message) || "something went wrong. Try again in a moment.");
+    });
+  });
+
+  deleteBtn.addEventListener("click", function(){
+    if (!state.db || !state.editingId) return;
+    var p = state.plants.filter(function(x){ return x._id === state.editingId; })[0];
+    if (!p) return;
+    if (!window.confirm('Delete "' + (p.name || "this plant") + '" from the book? This can\'t be undone.')) return;
+    var asset = p.photoAsset;
+    statusEl.textContent = "Deleting…";
+    state.db.collection("plants").doc(state.editingId).delete().then(function(){
+      if (asset && state.assets) state.assets.delete(asset).catch(function(){});
+      dlg.close();
+    }).catch(function(err){
+      statusEl.classList.add("error");
+      statusEl.textContent = "Couldn't delete: " + ((err && err.message) || "try again in a moment.");
+    });
+  });
+
+  /* ---------- boot: static first, shared book when available ---------- */
+  state.plants = state.plants.map(function(p, i){
+    p._id = p._id || "static-" + i;
+    return p;
+  });
+  render();
+
+  if (window.claude && typeof window.claude.use === "function"){
+    Promise.all([window.claude.use("db"), window.claude.use("assets")]).then(function(caps){
+      state.db = caps[0];
+      state.assets = caps[1] || null;
+      if (!state.db) return; /* static site (e.g. GitHub Pages): stay read-only */
+
+      document.getElementById("add-plant").hidden = false;
+      var note = document.getElementById("sync-note");
+      note.hidden = false;
+      note.textContent = "Shared book — anything either of you adds or edits here is saved for both of you.";
+
+      state.db.collection("plants").onSnapshot(function(snap){
+        state.plants = snap.docs.filter(function(d){ return d.exists; }).map(function(d){
+          var body = Object.assign({}, d.data());
+          body._id = d.id;
+          return body;
+        });
+        render();
+      }, function(){
+        note.textContent = "Live sync hit a snag — reload the page to reconnect.";
+      });
+    });
+  }
 })();
 </script>
 </body>
