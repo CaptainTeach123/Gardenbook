@@ -38,3 +38,31 @@
  */
 
 const PLANTS = [];
+
+PLANTS.push({
+  name: "Butterfly Bush",
+  scientificName: "Buddleja davidii",
+  // photo: "images/butterfly-bush.jpg",  // add the photo file to images/ to show it here
+  origin: "Central China; naturalized widely",
+  propagation: "Softwood cuttings in summer; self-seeds readily",
+  type: "Deciduous flowering shrub (compact/dwarf form)",
+  idealTemp: "60–85 °F; hardy zones 5–9, dies back in cold winters",
+  soilType: "Average, well-drained; tolerates poor soil, hates wet feet",
+  fertilizer: "Little needed — a light spring feed at most; overfeeding cuts blooms",
+  sunlight: "Sun",
+  water: "Low",
+  toxicity: ["Human Safe", "Pet Safe"],
+  uses: ["Decorative"],
+  pruning: {
+    seasons: ["Spring", "Summer"],
+    methods: ["Deadhead", "Cut Back"],
+    frequency: "Hard prune once each spring; deadhead all summer",
+    tools: "Bypass pruners; loppers for thick old stems",
+    lastPruned: "",
+    notes: "Blooms on new wood — cut all stems back to 12–18 in. in early spring once buds swell (never in autumn; frost can kill fresh cuts). Through summer, deadhead spent purple spikes just above a leaf pair to keep new panicles coming and stop it self-seeding."
+  },
+  pests: "Largely trouble-free. Spider mites in hot, dry spells (rinse foliage, insecticidal soap); occasional aphids and Japanese beetles. Root rot in soggy soil — drainage is the real safeguard.",
+  log: [
+    { date: "2026-09-13", entry: "Added to the garden book — in full purple bloom" }
+  ]
+});
